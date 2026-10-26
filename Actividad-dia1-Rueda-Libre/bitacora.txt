@@ -1,0 +1,331 @@
+Bitacora - Rueda Libre
+Dia 1 - 20/10/2026
+
+1. Repositorio
+Cree la carpeta Actividad-dia1-Rueda-Libre dentro de mi repositorio
+de GitHub (Repositorio-HTML-CSS). El repo ya tenia git iniciado y
+conectado con GitHub, asi que solo tuve que crear la carpeta.
+
+2. Estructura
+Cree estos archivos y carpetas:
+- index.html (la pagina de inicio)
+- paginas/ (para las otras paginas que vamos a hacer despues)
+- img/ (ahi guarde el logo, logo.jpg)
+- bitacora.txt (este archivo)
+Nota: a la carpeta paginas le puse un archivo .gitkeep porque git no
+sube carpetas vacias.
+
+3. index.html
+Puse el doctype, el idioma en español (lang="es"), el charset UTF-8
+para que salgan bien las tildes, el viewport para celulares, una
+descripcion para google y el titulo "Rueda Libre | Alquiler de
+bicicletas en Medellín"
+En el body puse el nombre en un h1, un parrafo de bienvenida, la
+lista de servicios y el link para reservar por WhatsApp
+
+4. Network en DevTools
+Abri la pagina con Live Server, despues F12, pestaña Network y
+recargue la pagina. Le di clic a index.html y esto fue lo que vi:
+
+URL: http://127.0.0.1:5500/Actividad-dia1-Rueda-Libre/index.html
+Protocolo: http
+Host: 127.0.0.1 (es mi propio computador)
+Puerto: 5500
+Ruta: /Actividad-dia1-Rueda-Libre/index.html
+Metodo: GET
+Codigo de estado: 200 (quiere decir que todo salio bien)
+
+Tambien vi que aparte pidio el logo.jpg
+
+5. Pagina que no existe
+Escribi /promociones.html en la barra de direcciones y me salio
+el codigo 404. Eso significa que el servidor no encontro la pagina
+porque ese archivo no existe
+
+6. HTML, CSS y JavaScript
+- HTML: es la estructura y el contenido de la pagina. Ejemplo: el
+  titulo Rueda Libre y la lista de servicios
+- CSS: es para el diseño, como se ve la pagina. Ejemplo: ponerle los
+  colores verdes del logo y que los servicios se vean como tarjetas.
+- JavaScript: es para que la pagina haga cosas. Ejemplo: un boton que
+  arme el mensaje de WhatsApp con la bici y la fecha que elija el
+  cliente
+
+7. Commit
+Hice el commit con el mensaje "Crear estructura inicial y página base
+de Rueda Libre" y lo subi a GitHub con git push
+
+
+Dia 2 - Contenido de la pagina de inicio
+
+1. Esquema
+Deje un solo h1 (Rueda Libre) y 4 secciones con h2: Quiénes somos?,
+Nuestros servicios, ¿Cómo alquilar? y Encuéntranos. Cada servicio
+tiene su h3 y su parrafo. No me salte ningun nivel de encabezado
+
+2. strong y em
+Use strong para lo importante, por ejemplo "incluyen casco y
+candado", y em para matices como "aptas para principiantes"
+
+3. Listas
+- ol con los 4 pasos para alquilar.
+- ul con 3 beneficios (casco y candado, bicis revisadas, reserva
+  rapida)
+
+4. Imagenes
+Guarde en img/ portada.jpg, bicicleta.jpg y ruta.jpg. Todas con
+ruta relativa (img/...), alt que describe la imagen y width
+
+5. Enlaces
+- Absoluto: Google Maps, abre en otra pestaña con target="_blank".
+- Correo: mailto:hola@ruedalibre.example
+- Interno: en el primer parrafo hay un link a #encuentranos (le puse
+  id="encuentranos" a esa seccion)
+
+6. Revision en DevTools
+En Elements revise que las secciones quedaran una despues de la otra
+dentro del main y no una metida dentro de otra. En Network recargue
+y todo salio con 200, ningun 404
+
+
+Dia 3 - Pagina de tarifas
+
+1. Pagina nueva
+Cree paginas/tarifas.html con su estructura completa (doctype, lang,
+charset, viewport, descripcion) y su propio titulo: "Tarifas | Rueda
+Libre - Bicicletas en Medellín"
+
+2. Tablas
+Hice dos tablas, una de alquiler y otra de recorridos. Las dos tienen
+caption (el titulo de la tabla), thead, tbody, th y td.
+Los th de arriba tienen scope="col" porque describen una columna y
+los del nombre de cada fila (Urbana, Montaña, Río y Parques...)
+tienen scope="row". Esto sirve para los lectores de pantalla.
+A la seccion de recorridos le puse id="recorridos"
+
+3. Informacion extra
+Lo de casco y candado y los horarios los puse en parrafos y lo que
+hay que llevar en una lista ul. No lo meti en la tabla porque las
+tablas son solo para datos
+
+4. Rutas relativas
+- El logo en tarifas.html es ../img/logo.jpg. El ../ es para subir
+  una carpeta, porque tarifas esta dentro de paginas/.
+- De tarifas al inicio: ../index.html
+- Del inicio a tarifas: paginas/tarifas.html
+- Del servicio de recorridos a la tabla: paginas/tarifas.html#recorridos
+  (el archivo + el id de la seccion)
+
+5. Revision
+En Network todo cargo con 200, ningun 404. Tambien corregi una frase
+del inicio que decia que todas las rutas eran para principiantes,
+porque el Reto Las Palmas es dificil
+
+
+Dia 4 - Menu, pie de pagina y reservas (v0.1)
+
+1. Pagina de reservas
+Cree paginas/reservas.html con su estructura completa, el titulo
+"Reserva tu bicicleta", el correo con mailto y el horario en una
+lista de definiciones (dl): el dt es el dia y el dd el horario.
+  Lunes a viernes -> 7:00 a. m. a 7:00 p. m.
+  Sabados, domingos y festivos -> 6:00 a. m. a 2:00 p. m
+
+2. Menu y pie de pagina
+Puse el mismo menu (nav con una ul) al comienzo de las 3 paginas:
+Inicio, Tarifas y rutas, Reservas. Las rutas cambian segun la
+carpeta donde esta cada archivo.
+El pie de pagina (footer) tiene el nombre, el correo y el año.
+Tambien agregue "Reservar ahora" en el inicio y debajo de la tabla
+de recorridos
+
+3. Titulos de cada pagina
+- index.html: Rueda Libre | Alquiler de bicicletas en Medellín
+- tarifas.html: Tarifas | Rueda Libre - Bicicletas en Medellín
+- reservas.html: Reservas | Rueda Libre - Bicicletas en Medellín
+
+4. Tabla de rutas
+Origen                 -> Destino                       -> Ruta escrita
+index.html             -> index.html                    -> index.html
+index.html             -> paginas/tarifas.html          -> paginas/tarifas.html
+index.html             -> paginas/reservas.html         -> paginas/reservas.html
+index.html             -> tabla de recorridos           -> paginas/tarifas.html#recorridos
+index.html             -> seccion Encuéntranos          -> #encuentranos
+index.html             -> img/*.jpg                     -> img/logo.jpg (igual las otras)
+paginas/tarifas.html   -> index.html                    -> ../index.html
+paginas/tarifas.html   -> paginas/tarifas.html          -> tarifas.html
+paginas/tarifas.html   -> paginas/reservas.html         -> reservas.html
+paginas/tarifas.html   -> img/logo.jpg                  -> ../img/logo.jpg
+paginas/reservas.html  -> index.html                    -> ../index.html
+paginas/reservas.html  -> paginas/tarifas.html          -> tarifas.html
+paginas/reservas.html  -> paginas/reservas.html         -> reservas.html
+paginas/reservas.html  -> img/logo.jpg                  -> ../img/logo.jpg
+
+Lo que aprendi: si el archivo esta en la misma carpeta solo pongo el
+nombre, si esta en una subcarpeta pongo carpeta/archivo y si esta una
+carpeta arriba uso ../
+
+5. Revision
+Desde cada pagina entre a las otras usando solo el menu (9
+combinaciones) y en Network todo salio 200, ningun 404
+
+
+Dia 5 - Estructura semantica
+
+1. Esquema de regiones antes de editar
+- Inicio: header (logo, nombre, imagen de portada y menu principal) ->
+main -> section "¿Quiénes somos?" -> section "Nuestros servicios"
+con un article por servicio y una section anidada para "¿Por qué
+alquilar con nosotros?" -> section "¿Cómo alquilar?" -> section
+"Encuéntranos" -> footer.
+- Tarifas: header (logo, nombre y menu principal) -> main -> section
+"Alquiler de bicicletas" con su tabla -> section "Recorridos guiados"
+con su tabla -> section "Información importante" con una lista
+complementaria dentro de aside -> footer.
+- Reservas: header (logo, nombre y menu principal) -> main -> section
+"Contacto" -> section "Horario de atención" con los horarios dentro
+de aside -> footer.
+
+2. Elementos semanticos
+El menu es nav dentro del header; cada pagina tiene un solo main y un
+footer. Los servicios de inicio son article porque cada uno describe
+un servicio independiente. Las listas de que llevar y de horarios
+son informacion complementaria y por eso van en aside.
+
+3. Div y span
+No se necesitan div ni span: las regiones y agrupaciones tienen
+elementos semanticos adecuados. Se conservan las listas, tablas,
+parrafos e imagenes porque describen su contenido correctamente.
+
+4. Comprobacion
+Se revisaron las tres paginas para confirmar un main por pagina, las
+secciones con encabezado, la jerarquia existente de h1, h2 y h3, y
+las rutas de navegacion, imagenes y enlaces internos.
+
+
+Dia 6 - Formulario de reserva
+
+1. Grupos del formulario
+En reservas.html agregue el formulario dentro de main y de su seccion
+"Formulario de reserva". Los campos estan organizados en los grupos
+"Tus datos", "Tu alquiler" y "Confirmación".
+
+2. Eleccion de controles
+- Use radio para el tipo de bicicleta porque solo se puede escoger una
+  opcion entre urbana, montaña y electrica.
+- Use select para el plan y el recorrido guiado porque cada campo
+  permite escoger una opcion de una lista fija.
+- Use checkbox para aceptar las politicas porque representa una
+  decision afirmativa independiente.
+- Documento se captura como texto para conservar posibles ceros
+  iniciales; celular usa tel y correo usa email.
+
+3. Etiquetas y envio
+Cada control tiene id, name y una etiqueta asociada mediante for. El
+formulario declara action="reservas.html" y method="post". Incluye el
+boton "Enviar reserva". El sitio es estatico y no tiene un servidor
+que procese el envio POST; action indica el destino previsto, no
+confirma una reserva.
+
+
+Dia 7 - Validacion y teclado
+
+1. Reglas de validacion nativa
+Nombre, documento, correo, celular y fecha son obligatorios. El nombre
+tiene minlength="3"; el documento usa pattern="[0-9]{6,10}" y el
+celular pattern="3[0-9]{9}", ambos con title y texto de ayuda. La
+fecha se limita del 2026-11-01 al 2026-12-31. El tipo de bicicleta y
+el plan son obligatorios; la cantidad va de 1 a 6; comentarios
+admite hasta 300 caracteres y las politicas son obligatorias.
+
+2. Tabla de pruebas
+Campo                 | Dato de prueba          | Esperado             | Obtenido
+Nombre completo       | "Al"                    | Rechazado (< 3)      | Rechazado
+Documento             | "12AB567"               | Rechazado (letras)   | Rechazado
+Documento             | "123456"                | Aceptado             | Aceptado
+Correo                | "ana@"                  | Rechazado            | Rechazado
+Celular               | "3001234567"            | Aceptado             | Aceptado
+Celular               | "1234567890"            | Rechazado (no inicia 3) | Rechazado
+Celular               | "300123"                | Rechazado (corto)    | Rechazado
+Fecha                 | "2026-10-31"            | Rechazado (anterior) | Rechazado
+Fecha                 | "2026-11-01"            | Aceptado (limite)    | Aceptado
+Fecha                 | "2027-01-01"            | Rechazado (posterior)| Rechazado
+Cantidad              | 0                       | Rechazado            | Rechazado
+Cantidad              | 7                       | Rechazado            | Rechazado
+Tipo de bicicleta     | Sin seleccionar         | Rechazado            | Rechazado
+Plan                  | Sin seleccionar         | Rechazado            | Rechazado
+Politicas             | Sin aceptar             | Rechazado            | Rechazado
+Comentarios           | 301 caracteres          | Maximo 300           | Limitado a 300
+Formulario completo   | Datos validos           | Valido               | Valido
+
+3. Recorrido con teclado
+Con Tab se recorrieron enlaces y campos en el orden del documento:
+datos personales, alquiler, confirmacion y envio. Shift+Tab regreso
+del nombre al enlace de correo. Las flechas cambiaron la opcion de
+bicicleta, Espacio marco las politicas y Enter en el boton de envio
+con el formulario incompleto mantuvo la pagina y enfoco el nombre
+obligatorio. El control de fecha puede tener segmentos internos que
+el navegador recorre con Tab.
+
+4. Limite del sitio estatico
+Las pruebas verifican la validacion nativa; no se envia una reserva
+real. El sitio no tiene un servidor que reciba el POST del formulario.
+
+
+Dia 8 - Auditoria de accesibilidad y paleta
+
+1. Auditoria de las paginas
+- Idioma: las tres paginas declaran lang="es"; se conserva porque
+  todo el contenido esta en español.
+- Imagenes: las seis imagenes tienen alt descriptivo (logo, portada,
+  bicicleta y mapa de ruta); ninguna es decorativa ni carece de alt.
+- Encabezados: cada pagina tiene un h1 y los h2/h3 siguen la
+  jerarquia logica; no se requirieron cambios.
+- Enlaces: los enlaces de navegación, correo, mapas, recorridos y
+  WhatsApp describen su destino. En inicio y tarifas reemplace
+  "Reservar ahora" por "Reservar una bicicleta o recorrido" para que
+  el proposito se entienda fuera de contexto.
+- Teclado: se comprobó Tab y Shift+Tab en reservas, con las opciones
+  de radio mediante flechas, la casilla con Espacio y el envio con
+  Enter. El formulario incompleto conserva la pagina y enfoca el
+  primer campo invalido. El control de fecha puede usar varias
+  pulsaciones de Tab para recorrer sus segmentos internos.
+- Navegacion entre paginas: se verificaron los enlaces internos,
+  destinos de anclas, imagenes locales y rutas con sus mayusculas.
+
+2. Contraste WCAG 2.1
+Combinacion                         | Contraste | Clasificacion
+Blanco sobre Verde Ruta             | 5.31:1    | Apta para texto normal
+Blanco sobre Naranja Pedal          | 2.22:1    | No apta
+Azul Noche sobre Naranja Pedal      | 7.20:1    | Apta para texto normal
+Azul Noche sobre Crema              | 14.83:1   | Apta para texto normal
+Gris Asfalto sobre Crema            | 5.57:1    | Apta para texto normal
+Verde Ruta sobre Crema              | 4.93:1    | Apta para texto normal
+Naranja Pedal sobre Crema           | 2.06:1    | No apta
+Blanco sobre Azul Noche             | 15.97:1   | Apta para texto normal
+
+Los contrastes se calcularon con la formula de luminancia relativa
+WCAG. Ninguna combinacion queda solamente en la categoria de texto
+grande: las que pasan 3:1 tambien pasan 4.5:1.
+
+3. Mapa de uso de color propuesto
+- Fondo general: Crema.
+- Texto principal y titulos: Azul Noche sobre Crema.
+- Texto secundario: Gris Asfalto sobre Crema.
+- Enlaces y botones principales: Verde Ruta con texto blanco.
+- Botones secundarios: Naranja Pedal con texto Azul Noche.
+- No usar texto blanco sobre Naranja Pedal ni texto Naranja Pedal
+  sobre Crema; ambos fallan incluso para texto grande.
+
+4. Publicacion
+El repositorio publico aparece actualmente como
+https://github.com/Danitoro02t/Repositorio-riwi. La URL prevista para
+este sitio es
+https://danitoro02t.github.io/Repositorio-riwi/Actividad-dia1-Rueda-Libre/
+pero al revisarla devolvio 404 y la API publica informa que GitHub
+Pages aun no esta configurado. No se pudo publicar desde este entorno:
+GitHub requiere autenticacion y no hay una sesion disponible. Por
+esto no se afirma que la URL este publicada ni se modifico la
+descripcion del repositorio. Cuando Pages se active desde main y se
+suban los commits locales, verificar las tres paginas, imagenes y
+enlaces en esa URL y agregarla como Website/descripcion del repo.

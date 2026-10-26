@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reserva tu bicicleta o recorrido guiado con Rueda Libre en Medellín mediante el formulario de reservas.">
+  <title>Reservas | Rueda Libre - Bicicletas en Medellín</title>
+</head>
+<body>
+  <header>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="tarifas.html">Tarifas y rutas</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+      </ul>
+    </nav>
+    <img src="../img/logo.jpg" alt="Logo de Rueda Libre: una bicicleta blanca dentro de un círculo verde" width="100">
+    <h1>Reserva tu bicicleta</h1>
+  </header>
+
+  <main>
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>
+        Si tienes preguntas sobre tu reserva, escríbenos a
+        <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.
+      </p>
+    </section>
+
+    <section id="formulario-reserva">
+      <h2>Formulario de reserva</h2>
+      <form action="reservas.html" method="post">
+        <fieldset>
+          <legend>Tus datos</legend>
+
+          <p>
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required minlength="3">
+          </p>
+          <p>
+            <label for="documento">Número de documento</label>
+            <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Escribe solo números: entre 6 y 10 dígitos." aria-describedby="ayuda-documento">
+          </p>
+          <p id="ayuda-documento">Solo números, entre 6 y 10 dígitos.</p>
+          <p>
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" required>
+          </p>
+          <p>
+            <label for="celular">Celular</label>
+            <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" title="Escribe 10 dígitos y comienza por 3, por ejemplo 3001234567." aria-describedby="ayuda-celular">
+          </p>
+          <p id="ayuda-celular">10 dígitos, debe empezar por 3. Ejemplo: 3001234567.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tu alquiler</legend>
+
+          <p>
+            <label for="fecha">Fecha del alquiler</label>
+            <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31" aria-describedby="ayuda-fecha">
+          </p>
+          <p id="ayuda-fecha">Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.</p>
+
+          <fieldset>
+            <legend>Tipo de bicicleta</legend>
+            <p>
+              <input type="radio" id="bicicleta-urbana" name="tipo-bicicleta" value="urbana" required>
+              <label for="bicicleta-urbana">Urbana</label>
+            </p>
+            <p>
+              <input type="radio" id="bicicleta-montana" name="tipo-bicicleta" value="montana">
+              <label for="bicicleta-montana">Montaña</label>
+            </p>
+            <p>
+              <input type="radio" id="bicicleta-electrica" name="tipo-bicicleta" value="electrica">
+              <label for="bicicleta-electrica">Eléctrica</label>
+            </p>
+          </fieldset>
+
+          <p>
+            <label for="plan">Plan</label>
+            <select id="plan" name="plan" required>
+              <option value="" selected disabled>Selecciona un plan</option>
+              <option value="1-hora">1 hora</option>
+              <option value="medio-dia">Medio día</option>
+              <option value="dia-completo">Día completo</option>
+            </select>
+          </p>
+          <p>
+            <label for="cantidad">Cantidad de bicicletas</label>
+            <input type="number" id="cantidad" name="cantidad" required min="1" max="6">
+          </p>
+          <p>
+            <label for="recorrido">Recorrido guiado</label>
+            <select id="recorrido" name="recorrido">
+              <option value="ninguno">Ninguno</option>
+              <option value="rio-y-parques">Río y Parques</option>
+              <option value="sabores-de-barrio">Sabores de Barrio</option>
+              <option value="reto-las-palmas">Reto Las Palmas</option>
+            </select>
+          </p>
+          <p>
+            <label for="comentarios">Comentarios</label>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="40" maxlength="300"></textarea>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Confirmación</legend>
+          <p>
+            <input type="checkbox" id="politicas" name="politicas" value="aceptadas" required>
+            <label for="politicas">Acepto las políticas de alquiler</label>
+          </p>
+        </fieldset>
+
+        <button type="submit">Enviar reserva</button>
+      </form>
+    </section>
+
+    <section id="horario">
+      <h2>Horario de atención</h2>
+      <aside>
+        <dl>
+          <dt>Lunes a viernes</dt>
+          <dd>7:00 a. m. a 7:00 p. m.</dd>
+          <dt>Sábados, domingos y festivos</dt>
+          <dd>6:00 a. m. a 2:00 p. m.</dd>
+        </dl>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <strong>Rueda Libre</strong> ·
+      <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a> ·
+      &copy; 2026
+    </p>
+  </footer>
+</body>
+</html>
