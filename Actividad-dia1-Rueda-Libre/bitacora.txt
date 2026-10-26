@@ -329,3 +329,71 @@ esto no se afirma que la URL este publicada ni se modifico la
 descripcion del repositorio. Cuando Pages se active desde main y se
 suban los commits locales, verificar las tres paginas, imagenes y
 enlaces en esa URL y agregarla como Website/descripcion del repo.
+
+5. Hoja de estilos, tipografias y marca
+- Cree css/styles.css con variables para los cinco colores de marca,
+  blanco como color neutro del mapa aprobado, Montserrat y Open Sans
+  con fuentes de respaldo, y una escala de espaciado en rem.
+- En las tres paginas agregue preconnect y la hoja de Google Fonts
+  antes de styles.css. Las rutas relativas son css/styles.css en el
+  inicio y ../css/styles.css en tarifas y reservas.
+- El body define con variables Open Sans, Azul Noche y fondo Crema;
+  los parrafos heredan la tipografia y el color. Los encabezados usan
+  Montserrat con un solo selector agrupado.
+- Verde Ruta se usa con texto blanco; Naranja Pedal con Azul Noche;
+  Azul Noche, Gris Asfalto y Verde Ruta se usan sobre Crema segun el
+  mapa. No se usa texto blanco sobre Naranja Pedal ni Naranja Pedal
+  sobre Crema.
+
+6. Comprobacion de estilos computados
+- En las tres paginas la hoja local y Google Fonts cargaron. Los
+  encabezados computan Montserrat, peso 700; los parrafos Open Sans,
+  peso 400.
+- En el parrafo de inicio, font-family y color computados coinciden
+  con los del body: son propiedades heredadas.
+- background-color no se hereda: el body computa Crema y el parrafo
+  transparente (rgba(0, 0, 0, 0)).
+- Revise las tres paginas: no tienen atributos style ni etiquetas
+  <style>. Los valores computados se verificaron en el navegador; se
+  pueden contrastar en DevTools, paneles Styles y Computed.
+
+
+Dia 10 - Navegacion, estados interactivos y cascada
+
+1. Enlace activo del menu
+- Asigne id="menu" a la lista de navegacion en las tres paginas.
+  Marque el enlace actual con class="activo" y aria-current="page":
+  Inicio, Tarifas y rutas o Reservas, segun corresponda.
+- El menu usa fondo Crema; sus enlaces Gris Asfalto y el enlace
+  activo Verde Ruta, combinaciones aprobadas con contraste suficiente.
+
+2. Especificidad y conflicto de cascada
+- #menu a tiene especificidad 1-0-1 (un id, cero clases y un
+  elemento). .activo tiene 0-1-0 (cero ids, una clase y cero
+  elementos). Para color, gana #menu a aunque la clase aparezca en el
+  HTML; por eso color de .activo queda tachado en Styles.
+- font-weight de .activo no queda tachado, porque #menu a no declara
+  esa propiedad. La clase si funciona para el peso, pero no para el
+  color en el menu.
+- Resolvi el conflicto con #menu a.activo (1-1-1), que supera a
+  #menu a y aplica Verde Ruta sin !important ni estilos en linea.
+  La regla original .activo sigue aportando font-weight: 600.
+
+3. Estados de enlaces, CTA y formulario
+- Los enlaces del menu tienen :hover y :focus con fondo Naranja Pedal
+  y texto Azul Noche. El foco incluye contorno visible.
+- Los enlaces de llamada a la accion usan la clase .cta; el estado
+  normal combina Azul Noche sobre Naranja Pedal y hover/focus usa
+  texto blanco sobre Verde Ruta.
+- Los campos del formulario tienen fondo blanco y un contorno Verde
+  Ruta de 3 px al recibir foco. Botones, enlaces y controles conservan
+  un indicador visible al navegar con teclado.
+
+4. Comprobacion
+- Se recorrieron Inicio, Tarifas y rutas y Reservas con Tab; el enlace
+  actual se distingue y los enlaces, CTA y campos muestran el foco.
+- Los colores, reglas calculadas y estados :hover/:focus se probaron
+  en el navegador. Para repetir la inspeccion manual en DevTools,
+  Styles muestra la diferencia entre #menu a y .activo; Computed
+  confirma el ganador #menu a.activo. El boton :hov permite forzar
+  :hover y :focus para revisar los estados visuales.

@@ -1,0 +1,186 @@
+:root {
+  --color-verde-ruta: #1F7A4E;
+  --color-naranja-pedal: #ED9D22;
+  --color-azul-noche: #152236;
+  --color-gris-asfalto: #5D636D;
+  --color-crema: #F9F6F1;
+  --color-blanco: #FFFFFF;
+
+  --font-heading: 'Montserrat', Arial, sans-serif;
+  --font-body: 'Open Sans', Arial, sans-serif;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+}
+
+body {
+  margin: 0;
+  color: var(--color-azul-noche);
+  background-color: var(--color-crema);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+header {
+  padding: var(--space-md);
+  color: var(--color-blanco);
+  background-color: var(--color-verde-ruta);
+}
+
+main {
+  padding: var(--space-md);
+}
+
+a {
+  color: var(--color-verde-ruta);
+}
+
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: 0 0 var(--space-md);
+  padding: var(--space-sm);
+  background-color: var(--color-crema);
+  list-style: none;
+}
+
+#menu a {
+  padding: var(--space-sm);
+  color: var(--color-gris-asfalto);
+}
+
+.activo {
+  color: var(--color-verde-ruta);
+  font-weight: 600;
+}
+
+#menu a.activo {
+  color: var(--color-verde-ruta);
+  text-decoration: underline;
+  text-decoration-thickness: 0.15em;
+  text-underline-offset: 0.2em;
+}
+
+#menu a:hover,
+#menu a:focus {
+  color: var(--color-azul-noche);
+  background-color: var(--color-naranja-pedal);
+}
+
+a:hover {
+  color: var(--color-azul-noche);
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid var(--color-azul-noche);
+  outline-offset: 3px;
+}
+
+#menu a:focus {
+  outline: 3px solid var(--color-azul-noche);
+  outline-offset: 3px;
+}
+
+.cta {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-azul-noche);
+  background-color: var(--color-naranja-pedal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta:hover,
+.cta:focus {
+  color: var(--color-blanco);
+  background-color: var(--color-verde-ruta);
+}
+
+.cta:hover:focus {
+  outline-color: var(--color-blanco);
+  outline-offset: -3px;
+}
+
+header a,
+footer a {
+  color: var(--color-blanco);
+}
+
+footer a:hover {
+  color: var(--color-azul-noche);
+  background-color: var(--color-naranja-pedal);
+  text-decoration: underline;
+}
+
+footer a:focus {
+  color: var(--color-azul-noche);
+  background-color: var(--color-naranja-pedal);
+  outline-color: var(--color-blanco);
+}
+
+th {
+  color: var(--color-blanco);
+  background-color: var(--color-verde-ruta);
+}
+
+aside {
+  color: var(--color-gris-asfalto);
+}
+
+button {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-azul-noche);
+  background-color: var(--color-naranja-pedal);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+button:hover {
+  color: var(--color-blanco);
+  background-color: var(--color-verde-ruta);
+}
+
+button:hover:focus {
+  outline-color: var(--color-blanco);
+  outline-offset: -3px;
+}
+
+input,
+select,
+textarea {
+  color: var(--color-azul-noche);
+  background-color: var(--color-blanco);
+  font-family: var(--font-body);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--color-verde-ruta);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--color-verde-ruta);
+  outline-offset: 2px;
+}
+
+form p:focus-within {
+  outline: 3px solid var(--color-verde-ruta);
+  outline-offset: 2px;
+}
+
+footer {
+  padding: var(--space-md);
+  color: var(--color-blanco);
+  background-color: var(--color-azul-noche);
+}
