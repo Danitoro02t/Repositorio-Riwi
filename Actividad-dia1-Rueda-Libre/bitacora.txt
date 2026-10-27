@@ -397,3 +397,24 @@ Dia 10 - Navegacion, estados interactivos y cascada
   Styles muestra la diferencia entre #menu a y .activo; Computed
   confirma el ganador #menu a.activo. El boton :hov permite forzar
   :hover y :focus para revisar los estados visuales.
+
+
+Dia 11 - Flexbox en encabezado y pie
+
+1. Distribucion
+- Agrupe el logo y el nombre del negocio en un bloque flexible y puse
+  la navegacion en el extremo opuesto, centrada verticalmente.
+- El menu comparte la hoja de estilos de las tres paginas: sus enlaces
+  se separan con gap y pueden pasar a otra linea.
+- Organicé el pie en tres bloques: marca, contacto y horario. En
+  pantallas anchas quedan en fila y alineados arriba.
+
+2. Prueba al estrechar la ventana
+- Revise las tres paginas con anchos de 1440, 390 y 320 px.
+- A 1440 px, la marca y el menu quedan en lados opuestos y los tres
+  bloques del pie se mantienen en una fila.
+- Al bajar a 390 px, la navegacion pasa debajo de la marca y los
+  bloques del pie se apilan.
+- A 320 px, el titulo puede ocupar dos lineas y los enlaces del menu
+  pasan a una segunda linea en vez de desbordarse. El pie conserva sus
+  tres bloques apilados.

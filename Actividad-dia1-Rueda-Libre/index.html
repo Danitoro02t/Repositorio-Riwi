@@ -12,15 +12,19 @@
 </head>
 <body>
   <header>
-    <nav aria-label="Navegación principal">
-      <ul id="menu">
-        <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
-        <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
-        <li><a href="paginas/reservas.html">Reservas</a></li>
-      </ul>
-    </nav>
-    <img src="img/logo.jpg" alt="Logo de Rueda Libre: una bicicleta blanca dentro de un círculo verde" width="100">
-    <h1>Rueda Libre</h1>
+    <div class="header-layout">
+      <div class="brand">
+        <img src="img/logo.jpg" alt="Logo de Rueda Libre: una bicicleta blanca dentro de un círculo verde" width="100">
+        <h1>Rueda Libre</h1>
+      </div>
+      <nav aria-label="Navegación principal">
+        <ul id="menu">
+          <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
+          <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
+          <li><a href="paginas/reservas.html">Reservas</a></li>
+        </ul>
+      </nav>
+    </div>
     <img src="img/portada.jpg" alt="Ciclista pedaleando por una calle de Medellín con las montañas de fondo" width="800">
   </header>
 
@@ -100,11 +104,15 @@
   </main>
 
   <footer>
-    <p>
-      <strong>Rueda Libre</strong> ·
-      <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a> ·
-      &copy; 2026
-    </p>
+    <div class="footer-section">
+      <p><strong>Rueda Libre</strong><br>&copy; 2026</p>
+    </div>
+    <div class="footer-section">
+      <p><strong>Contacto</strong><br><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+    </div>
+    <div class="footer-section">
+      <p><strong>Horario</strong><br>Lun. a vie.: 7:00 a. m. a 7:00 p. m.<br>Fines de semana y festivos: 6:00 a. m. a 2:00 p. m.</p>
+    </div>
   </footer>
 </body>
 </html>
