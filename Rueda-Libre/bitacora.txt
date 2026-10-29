@@ -480,3 +480,35 @@ Dia 13 - 28/10/2026 - Grid y Flexbox en los layouts
   en una fila y reservas con columnas 2:1. En movil, comprobar
   columnas apiladas, navegacion y pie sin desbordamiento, y probar el
   envio con datos invalidos para confirmar la validacion nativa.
+
+
+Dia 14 - 28/10/2026 - Ajustes responsive mobile-first (v1.5)
+
+1. Problemas encontrados y soluciones
+- La hoja partia de grids de escritorio y usaba media queries max-width,
+  por lo que la estructura movil dependia de sobrescribir el layout.
+  Cambie la base a una columna y reserve los cambios de columnas para
+  min-width: 768px y min-width: 1200px.
+- En el encabezado, la marca y la navegacion podian competir por el
+  espacio estrecho y el menu quedaba alineado a la derecha. En movil
+  apile y centre la marca y el menu; desde 768px restableci la fila y
+  la distribucion del MiniReto 1.
+- A 360px, la tabla de recorridos sin ajustes ocupaba aproximadamente
+  359px dentro de un contenedor de 313px y ampliaba la pagina mas alla
+  del viewport. Aplique ancho completo, columnas fijas, texto y relleno
+  compactos y ajuste de linea; las dos tablas quedan dentro del ancho.
+- El formulario de reservas y su informacion lateral quedaban en
+  columnas en anchos medianos. Mantengo ambas secciones apiladas hasta
+  1200px y paso a dos columnas al alcanzar ese ancho.
+
+2. Comprobacion responsive
+- Emule los anchos de 360px, 768px y 1280px en el navegador integrado
+  y revise Inicio, Tarifas y Reservas.
+- A 360px: una columna en portada, rutas y reservas; las tablas no
+  exceden su contenedor; no hay desbordamiento horizontal.
+- A 768px: portada en dos columnas, rutas en dos columnas y encabezado
+  y pie en fila.
+- A 1280px: rutas en tres columnas y reservas en dos columnas.
+- En las tres paginas y anchos, las imagenes caben en sus contenedores.
+- No se probo en un celular fisico ni se publico en GitHub Pages desde
+  este entorno; esas comprobaciones quedan pendientes.

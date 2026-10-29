@@ -33,7 +33,6 @@ img {
 }
 
 h1 {
-  display: flex;
   margin: 0;
 }
 
@@ -55,39 +54,67 @@ th {
   background-color: var(--color-verde-ruta);
 }
 
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+caption {
+  margin-bottom: var(--space-sm);
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  padding: 0.35rem 0.2rem;
+  border: 1px solid var(--color-gris-asfalto);
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+table tr > :first-child {
+  width: 30%;
+}
+
 /* ==========================================================================
    3. LAYOUT GENERAL (Estructura de la Página)
    ========================================================================= */
 header {
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-md);
   color: var(--color-blanco);
   background-color: var(--color-verde-ruta);
 }
 
 .header-layout {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .brand {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: var(--space-sm);
+}
+
+.brand img {
+  width: 4rem;
 }
 
 .brand h1 {
   margin: 0;
   color: var(--color-blanco);
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  text-align: center;
 }
 
 header nav {
-  flex: 1 1 20rem;
-  min-width: 0;
+  width: 100%;
 }
 
 main {
@@ -96,10 +123,7 @@ main {
 
 footer {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
   gap: var(--space-lg);
   padding: var(--space-md);
   color: var(--color-blanco);
@@ -107,7 +131,7 @@ footer {
 }
 
 .footer-section {
-  flex: 1 1 12rem;
+  flex: 0 1 auto;
 }
 
 .footer-section p {
@@ -120,7 +144,7 @@ footer {
 /* Hero */
 .hero-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   gap: var(--space-lg);
   padding: var(--space-lg) 0;
@@ -135,7 +159,7 @@ footer {
 /* Rutas */
 .route-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-md);
 }
 
@@ -197,7 +221,7 @@ footer {
 /* Reservas y Formularios */
 .booking-layout {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-lg);
   align-items: start;
 }
@@ -210,13 +234,15 @@ footer {
 
 .form-row {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-md);
+  gap: 0;
 }
 
 .form-field {
   flex: 1 1 0;
   min-width: 0;
+  width: 100%;
 }
 
 .form-field p {
@@ -249,7 +275,7 @@ footer {
 #menu {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: var(--space-sm);
   margin: 0;
@@ -377,27 +403,81 @@ button:focus,
 }
 
 /* ==========================================================================
-   7. MEDIA QUERIES (Diseño Responsivo)
+   7. MEDIA QUERIES (Diseño Mobile-first)
    ========================================================================= */
-@media (max-width: 52rem) {
+@media (min-width: 768px) {
+  .header-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  .brand {
+    flex-direction: row;
+  }
+
+  .brand img {
+    width: 100px;
+  }
+
+  .brand h1 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  header nav {
+    flex: 1 1 20rem;
+    min-width: 0;
+  }
+
+  #menu {
+    justify-content: flex-end;
+  }
+
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-section {
+    flex: 1 1 12rem;
+  }
+
+  .hero-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .route-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
-
-@media (max-width: 40rem) {
-  .hero-layout,
-  .booking-layout,
-  .route-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
 
   .form-row {
-    flex-direction: column;
-    gap: 0;
+    flex-direction: row;
+    gap: var(--space-md);
   }
 
   .form-field {
-    width: 100%;
+    width: auto;
+  }
+
+  table {
+    font-size: 1rem;
+  }
+
+  th,
+  td {
+    padding: var(--space-sm);
+  }
+}
+
+@media (min-width: 1200px) {
+  .route-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .booking-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   }
 }
