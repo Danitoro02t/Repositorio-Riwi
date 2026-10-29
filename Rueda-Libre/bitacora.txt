@@ -443,3 +443,40 @@ Dia 12 - 28/10/2026 - Cuadricula adaptable de la flota
   - 500 px: 1 columna.
 - Comprobe que las tarjetas de cada fila tienen la misma altura, los
   enlaces quedan alineados al final y las siete imagenes cargan.
+
+Dia 13 - 28/10/2026 - Grid y Flexbox en los layouts
+
+1. Decisiones de layout
+- Portada: use Grid con dos columnas `1fr` y `1fr`, y alinee el
+  contenido al centro vertical con `align-items`. Aunque visualmente
+  es una fila, el bloque combina la posicion horizontal de columnas y
+  la alineacion vertical de contenido e imagen: son dos dimensiones.
+- Galeria "Nuestras rutas": use Grid con `repeat(3, minmax(0, 1fr))`
+  y `gap` para colocar tres tarjetas en columnas iguales. Organiza
+  tanto columnas como filas si el espacio cambia, por eso es
+  bidimensional.
+- Reservas: use Grid con columnas `2fr 1fr` para dar al formulario
+  dos partes del espacio y a la informacion una. Debe relacionar dos
+  areas en una composicion de pagina, asi que Grid facilita ambas
+  dimensiones.
+- Fila de documento y celular: use Flexbox con `gap` para distribuir
+  los dos campos relacionados horizontalmente. Es una sola fila, por
+  lo que basta una dimension; en pantalla estrecha se apilan.
+- Encabezado: conserve Flexbox con `justify-content`, `align-items` y
+  `gap` para separar marca y menu en una fila. Es una distribucion
+  lineal, que puede envolverse en pantallas estrechas.
+- Pie: conserve Flexbox con `justify-content`, `align-items` y `gap`
+  para alinear sus tres bloques en una fila y permitir que se envuelvan.
+  Los bloques solo necesitan una dimension principal.
+
+2. Adaptacion y comprobaciones
+- La portada, la galeria y reservas pasan a una columna en pantallas
+  estrechas; la galeria tambien muestra dos columnas en anchos
+  intermedios. La flota mantiene su cuadricula adaptable existente.
+- El nombre, documento, correo, celular y demas controles conservan
+  sus requisitos HTML de validacion, mensajes de ayuda y orden de
+  teclado; el campo de documento y celular comparten fila en escritorio.
+- En escritorio, revisar la portada en dos columnas, las tres rutas
+  en una fila y reservas con columnas 2:1. En movil, comprobar
+  columnas apiladas, navegacion y pie sin desbordamiento, y probar el
+  envio con datos invalidos para confirmar la validacion nativa.
