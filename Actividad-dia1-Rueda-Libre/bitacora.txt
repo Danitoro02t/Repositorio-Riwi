@@ -418,3 +418,28 @@ Dia 11 - Flexbox en encabezado y pie
 - A 320 px, el titulo puede ocupar dos lineas y los enlaces del menu
   pasan a una segunda linea en vez de desbordarse. El pie conserva sus
   tres bloques apilados.
+
+Dia 12 - 28/10/2026 - Cuadricula adaptable de la flota
+
+1. Tarjetas
+- Agregue la seccion "Nuestra flota" con siete articulos: Urbana
+  Clasica, Urbana Plegable, Montana Trail, Gravel Aventura, Electrica
+  Urbana, Infantil y Tandem.
+- Cada tarjeta muestra foto, nombre, descripcion, precio por hora y
+  enlace "Reservar" al formulario.
+- Como el proyecto solo tenia una foto de bicicleta, reutilice
+  img/bicicleta.jpg en las tarjetas.
+- Cada tarjeta conserva el modelo de caja con relleno, borde y esquinas
+  redondeadas. El contenido usa Flexbox en columna para mantener el
+  enlace al final aunque cambie la longitud de la descripcion.
+
+2. Cuadricula y comprobacion
+- Use Grid con repeat(auto-fit, minmax(16rem, 1fr)) y gap uniforme;
+  al agregar el septimo articulo no fue necesario cambiar el CSS.
+- En el modo de viewport emulado del navegador, revise la pagina con
+  anchos de 1280, 900 y 500 px:
+  - 1280 px: 4 columnas.
+  - 900 px: 3 columnas.
+  - 500 px: 1 columna.
+- Comprobe que las tarjetas de cada fila tienen la misma altura, los
+  enlaces quedan alineados al final y las siete imagenes cargan.
