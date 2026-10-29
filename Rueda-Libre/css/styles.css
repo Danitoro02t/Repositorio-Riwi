@@ -130,6 +130,11 @@ footer {
   background-color: var(--color-azul-noche);
 }
 
+footer address {
+  margin: 0;
+  font-style: normal;
+}
+
 .footer-section {
   flex: 0 1 auto;
 }

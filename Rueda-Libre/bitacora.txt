@@ -173,34 +173,46 @@ combinaciones) y en Network todo salio 200, ningun 404
 Dia 5 - Estructura semantica
 
 1. Esquema de regiones antes de editar
-- Inicio: header (logo, nombre, imagen de portada y menu principal) ->
-main -> section "¿Quiénes somos?" -> section "Nuestros servicios"
-con un article por servicio y una section anidada para "¿Por qué
-alquilar con nosotros?" -> section "¿Cómo alquilar?" -> section
-"Encuéntranos" -> footer.
-- Tarifas: header (logo, nombre y menu principal) -> main -> section
-"Alquiler de bicicletas" con su tabla -> section "Recorridos guiados"
-con su tabla -> section "Información importante" con una lista
-complementaria dentro de aside -> footer.
-- Reservas: header (logo, nombre y menu principal) -> main -> section
-"Contacto" -> section "Horario de atención" con los horarios dentro
-de aside -> footer.
+- Inicio: header (logo, nombre del negocio y nav principal) -> main:
+  section "Pedalea Medellin a tu ritmo" -> section "Nuestras rutas"
+  con un article por ruta -> section "Quienes somos?" -> section
+  "Nuestra flota" con un article por bicicleta -> section "Nuestros
+  servicios" con un article por servicio y una section para "Por que
+  alquilar con nosotros?" -> section "Como alquilar?" -> section
+  "Encuentranos" -> footer.
+- Tarifas: header (logo, nombre del negocio y nav principal) -> main:
+  section "Alquiler de bicicletas" con su tabla -> section
+  "Recorridos guiados" con su tabla -> section "Informacion
+  importante" con la lista complementaria "Que llevar" en aside ->
+  footer.
+- Reservas: header (logo, nombre del negocio y nav principal) -> main:
+  section "Formulario de reserva" con el formulario -> aside
+  complementario con section "Contacto" y section "Horario de
+  atencion" -> footer.
 
 2. Elementos semanticos
-El menu es nav dentro del header; cada pagina tiene un solo main y un
-footer. Los servicios de inicio son article porque cada uno describe
-un servicio independiente. Las listas de que llevar y de horarios
-son informacion complementaria y por eso van en aside.
+Las tres paginas usan header con nav principal, un unico main y
+footer. Cada bloque tematico de inicio es section con encabezado; las
+rutas, bicicletas y servicios independientes son article. En tarifas,
+cada tabla esta en su propia section y "Que llevar" esta en aside. En
+reservas, el formulario es el contenido principal y el contacto y el
+horario son contenido complementario en aside. El bloque de contacto
+de cada footer usa address para identificar semanticamente esos datos.
 
 3. Div y span
-No se necesitan div ni span: las regiones y agrupaciones tienen
-elementos semanticos adecuados. Se conservan las listas, tablas,
-parrafos e imagenes porque describen su contenido correctamente.
+Los div restantes solo agrupan elementos para el layout de CSS y no
+tienen un equivalente semantico que conserve esa funcion: header-layout
+y brand en el encabezado; hero-copy, route-grid y fleet-grid en inicio;
+booking-layout, form-row y form-field en reservas; footer-section para
+el nombre y horario de los pies de pagina. El span de "Precio por
+hora" en inicio es un contenedor en linea para presentacion; no hay
+una etiqueta semantica equivalente para ese texto.
 
 4. Comprobacion
-Se revisaron las tres paginas para confirmar un main por pagina, las
-secciones con encabezado, la jerarquia existente de h1, h2 y h3, y
-las rutas de navegacion, imagenes y enlaces internos.
+Se comprueba que cada pagina tenga un solo main, que cada section
+tenga encabezado, que se mantenga la jerarquia h1, h2 y h3 del Dia 1,
+y que funcionen los enlaces de navegacion, internos, de contacto y de
+reserva.
 
 
 Dia 6 - Formulario de reserva
