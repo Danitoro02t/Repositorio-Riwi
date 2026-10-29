@@ -524,3 +524,49 @@ Dia 14 - 28/10/2026 - Ajustes responsive mobile-first (v1.5)
 - En las tres paginas y anchos, las imagenes caben en sus contenedores.
 - No se probo en un celular fisico ni se publico en GitHub Pages desde
   este entorno; esas comprobaciones quedan pendientes.
+
+
+Dia 15 - 29/10/2026 - Pruebas de validacion nativa y teclado
+
+1. Pruebas de validacion
+Ejecute las pruebas en Chromium integrado usando la validacion nativa
+del formulario (checkValidity). Se envio un formulario completo de
+prueba a la validacion, sin servidor:
+
+Campo                 | Dato de prueba           | Resultado esperado       | Resultado obtenido
+Nombre completo       | "Al"                     | Rechazado (< 3)          | Rechazado
+Nombre completo       | "Ana Perez"              | Aceptado                 | Aceptado
+Documento             | "12AB567"                | Rechazado (solo numeros) | Rechazado
+Documento             | "123456"                 | Aceptado (6 digitos)     | Aceptado
+Correo                | "ana@"                   | Rechazado                | Rechazado
+Celular               | "3001234567"             | Aceptado                 | Aceptado
+Celular               | "1234567890"             | Rechazado (no inicia 3)  | Rechazado
+Celular               | "300123"                 | Rechazado (corto)        | Rechazado
+Fecha                 | "2026-10-31"             | Rechazado (antes del min)| Rechazado
+Fecha                 | "2026-11-01"             | Aceptado (fecha minima)  | Aceptado
+Fecha                 | "2026-12-31"             | Aceptado (fecha maxima)  | Aceptado
+Fecha                 | "2027-01-01"             | Rechazado (despues max)  | Rechazado
+Cantidad              | 0                        | Rechazado                | Rechazado
+Cantidad              | 7                        | Rechazado                | Rechazado
+Cantidad              | 1.5                      | Rechazado (no entero)    | Rechazado
+Cantidad              | 1 y 6                    | Aceptados (limites)      | Aceptados
+Tipo de bicicleta     | Ninguna opcion           | Rechazado                | Rechazado
+Plan                  | Sin seleccionar          | Rechazado                | Rechazado
+Politicas             | Sin aceptar              | Rechazado                | Rechazado
+Campos obligatorios   | Cada uno vacio por turno | Rechazado                | Rechazado en los 8
+Comentarios           | 301 caracteres           | Limite de 300            | Limitado a 300
+Formulario completo   | Datos validos            | Valido                   | Valido
+
+2. Recorrido con teclado
+- Tab y Shift+Tab permiten recorrer el menu y los controles en orden
+  de lectura: datos personales, fecha, bicicleta, plan, cantidad,
+  recorrido opcional, comentarios, politicas y envio. El control de
+  fecha tiene segmentos internos que pueden requerir varias pulsaciones
+  de Tab.
+- Las flechas cambian la opcion de bicicleta y Espacio marca la casilla
+  de politicas.
+- Enter sobre el boton con datos incompletos no envia el formulario;
+  la validacion nativa enfoca el primer campo obligatorio.
+- Se comprobo que los datos completos satisfacen las restricciones.
+  No se puede confirmar una reserva real: el proyecto es estatico y no
+  cuenta con un servidor para procesar el POST.
